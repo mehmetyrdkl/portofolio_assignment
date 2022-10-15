@@ -13,9 +13,10 @@
   --text-color: #c9c9c9;
   --accent-color: #9568ff;
   --accent-color-light: #b595ff;
-  --section-color: #242424;
-  --section-color-dark: #111111;
+  --section-color: #272727;
+  --section-color-dark: #222222;
   --section-color-darker: #0f0f0f;
+  --section-padding: 3rem;
 }
 
 * {
@@ -48,7 +49,7 @@ h1 {
 h2 {
   font-size: 1.953rem;
   line-height: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 h3 {
@@ -180,9 +181,67 @@ header p {
   margin-bottom: 1rem;
   background-image: url(assets/profile_image.png);
   filter: brightness(80%);
-  padding: 3rem;
+  padding: var(--section-padding);
   background-size: cover;
   border-radius: 50%;
+}
+
+/* TAKEAWAY SECTION */
+
+#takeaways {
+  background-color: var(--section-color-dark);
+  padding: var(--section-padding);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.takeaways-text-wrapper {
+  width: 550px;
+  min-width: 300px;
+  color: var(--text-color);
+  display: grid;
+  gap: 1rem;
+}
+
+.takeaways-text-wrapper p {
+  font-size: 1.1rem;
+}
+
+.takeaways_graphics {
+  width: 25vw;
+  height: 25vw;
+  min-width: 250px;
+  min-height: 250px;
+  margin-bottom: 1rem;
+  background-image: url(assets/section_image.jpg);
+  border-radius: 2rem;
+  background-size: cover;
+  justify-self: center;
+}
+
+/* ASSIGNMENTS SECTION */
+
+.assignments-section {
+  padding: var(--section-padding);
+}
+
+.assignments-text-wrapper {
+  width: 100%;
+  min-width: 300px;
+  color: var(--text-color);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.assignments-text-wrapper p {
+  font-size: 1.1rem;
+  padding-bottom: 2rem;
+}
+
+.assignments-text-wrapper em {
+  color: var(--accent-color);
 }
 
 /* MEDIA QUERIES */
@@ -215,18 +274,39 @@ header p {
   }
 }
 
+@media (max-width: 640px) {
+  .takeaways-text-wrapper {
+    width: 100%;
+  }
+  html {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 665px) {
+  .assignmets-text-wrapper {
+    width: 280px;
+  }
+}
+
 @media (max-width: 770px) {
   header {
     flex-direction: column-reverse;
     padding: 2.5rem;
   }
 
-  header h1,
-  p {
+  header h1 {
     padding-left: 1rem;
   }
-  html {
-    font-size: 0.9em;
+  header p {
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 960px) {
+  #takeaways {
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 }
 
